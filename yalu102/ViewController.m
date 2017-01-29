@@ -25,10 +25,13 @@ typedef struct {
 } sprz;
 
 @interface ViewController ()
+ 
+
 
 @end
 
 @implementation ViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,10 +39,9 @@ typedef struct {
     struct utsname u = { 0 };
     uname(&u);
     
-
+    [self jailbreakStatus:0 actualSwitch:dope];
     if (strstr(u.version, "MarijuanARM")) {
-        [dope setEnabled:NO];
-        [dope setTitle:@"already jailbroken" forState:UIControlStateDisabled];
+        [self jailbreakStatus:1 actualSwitch:dope];
     }
 
     // Do any additional setup after loading the view, typically from a nib.
@@ -117,7 +119,37 @@ struct not_essers_ipc_object {
 #define IKOT_CLOCK 25
 
 char dt[128];
-- (IBAction)yolo:(UIButton*)sender
+
+
+- (void)jailbreakStatus:(int)enabled actualSwitch:(UISwitch *)aSwitch
+{
+    switch (enabled) {
+    
+        case 0:
+            // no jb
+            aSwitch.on = true;
+            aSwitch.userInteractionEnabled = true;
+            statusLabel.text = @"Unjailbroken";
+            break;
+        case 1:
+            // we're good
+            aSwitch.on = false;
+            aSwitch.userInteractionEnabled = false;
+            statusLabel.text = @"Jailbreak is enabled";
+            break;
+        case 2:
+            // retry
+            aSwitch.on = false;
+            aSwitch.userInteractionEnabled = true;
+            statusLabel.text = @"Failed, slide to retry";
+        default:
+            //idgaf
+            break;
+    }
+    
+    
+}
+- (IBAction)yolo:(UISwitch *)sender
 {
     /*
      
@@ -253,7 +285,8 @@ char dt[128];
             ports[i] = 0;
         }
     }
-    [sender setTitle:@"failed, retry" forState:UIControlStateNormal];
+   // [sender setTitle:@"failed, retry" forState:UIControlStateNormal];
+    [self jailbreakStatus:2 actualSwitch:sender];
     return;
     
 foundp:
@@ -273,7 +306,8 @@ foundp:
             }
         }
     }
-    [sender setTitle:@"failed, retry" forState:UIControlStateNormal];
+    //[sender setTitle:@"failed, retry" forState:UIControlStateNormal];
+    [self jailbreakStatus:2 actualSwitch:sender];
     return;
     
 gotclock:;
@@ -373,9 +407,8 @@ gotclock:;
     
     void exploit(void*, mach_port_t, uint64_t, uint64_t);
     exploit(sender, pt, kernel_base, allproc_offset);
-    [dope setEnabled:NO];
-    [dope setTitle:@"already jailbroken" forState:UIControlStateDisabled];
-
+        [self jailbreakStatus:1 actualSwitch:sender];
+   
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,8 @@
 
 @interface ViewController : UIViewController
 {
-    IBOutlet UIButton* dope;
+    IBOutlet UISwitch* dope;
+    IBOutlet UILabel *statusLabel;
 }
 - (IBAction)yolo:(id)sender;
 
