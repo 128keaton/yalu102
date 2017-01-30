@@ -33,18 +33,15 @@ typedef struct {
 @implementation ViewController
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidAppear:(BOOL)animated{
     init_offsets();
     struct utsname u = { 0 };
     uname(&u);
-    
     [self jailbreakStatus:0 actualSwitch:dope];
     if (strstr(u.version, "MarijuanARM")) {
         [self jailbreakStatus:1 actualSwitch:dope];
     }
 
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 typedef natural_t not_natural_t;
@@ -127,21 +124,21 @@ char dt[128];
     
         case 0:
             // no jb
-            aSwitch.on = true;
+            [aSwitch setOn:false];
             aSwitch.userInteractionEnabled = true;
             statusLabel.text = @"Unjailbroken";
             break;
         case 1:
             // we're good
-            aSwitch.on = false;
+            [aSwitch setOn:true];
             aSwitch.userInteractionEnabled = false;
             statusLabel.text = @"Jailbreak is enabled";
             break;
         case 2:
             // retry
-            aSwitch.on = false;
+            [aSwitch setOn:true];
             aSwitch.userInteractionEnabled = true;
-            statusLabel.text = @"Failed, slide to retry";
+            statusLabel.text = @"Try again";
         default:
             //idgaf
             break;

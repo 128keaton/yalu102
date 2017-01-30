@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,43 +23,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yalu by qwertyoruiopz &amp; marcograssi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOx-xh-mld">
-                                <rect key="frame" x="53" y="556" width="283" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for all iOS 10 up to 10.2 pre-i7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBH-un-0mh">
-                                <rect key="frame" x="75" y="616" width="226" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRc-Oi-LbS">
-                                <rect key="frame" x="163" y="318" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRc-Oi-LbS">
+                                <rect key="frame" x="163" y="189" width="51" height="31"/>
                                 <connections>
                                     <action selector="yolo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gJW-M4-bz6"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jailbreak Status:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-Qu-F5J">
-                                <rect key="frame" x="105" y="276" width="165" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-9J-0rj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HR-oK-Smu">
+                                        <rect key="frame" x="16" y="86" width="343" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="cyY-rw-3da"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently, you are:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-Qu-F5J">
+                                        <rect key="frame" x="117" y="57" width="140" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.81824933978873238" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="9wc-7R-vAl"/>
+                                    <constraint firstItem="8HR-oK-Smu" firstAttribute="centerX" secondItem="wmO-9J-0rj" secondAttribute="centerX" id="Cm9-XL-aVA"/>
+                                    <constraint firstItem="8HR-oK-Smu" firstAttribute="centerX" secondItem="wvb-Qu-F5J" secondAttribute="centerX" id="Ks0-gH-afI"/>
+                                    <constraint firstItem="8HR-oK-Smu" firstAttribute="leading" secondItem="wmO-9J-0rj" secondAttribute="leading" constant="16" id="QPf-fb-h3A"/>
+                                    <constraint firstItem="8HR-oK-Smu" firstAttribute="top" secondItem="wvb-Qu-F5J" secondAttribute="bottom" constant="8" symbolic="YES" id="bVK-Ra-aTd"/>
+                                    <constraint firstAttribute="bottom" secondItem="8HR-oK-Smu" secondAttribute="bottom" id="myG-VE-4ST"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yalu by qwertyoruiopz &amp; marcograssi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOx-xh-mld">
+                                <rect key="frame" x="46" y="626" width="283" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip switch to Jailbreak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7p-sW-LIP">
+                                <rect key="frame" x="101" y="228" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="UtQ-1j-srq">
+                                <rect key="frame" x="137" y="509" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UtQ-1j-srq" secondAttribute="height" multiplier="1:1" id="YDD-Ji-gcZ"/>
+                                    <constraint firstAttribute="height" constant="100" id="mSU-B2-cg6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98958333330000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gOx-xh-mld" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="556" id="Lak-A4-fwI"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SBH-un-0mh" secondAttribute="bottom" constant="30" id="WX7-VB-beg"/>
-                            <constraint firstItem="gOx-xh-mld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="7" id="go3-GK-gg8"/>
-                            <constraint firstItem="SBH-un-0mh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="llZ-Oo-VUY"/>
+                            <constraint firstItem="hRc-Oi-LbS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-129" id="E7v-4u-XMm"/>
+                            <constraint firstItem="U7p-sW-LIP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HJ3-Va-2cF"/>
+                            <constraint firstItem="wmO-9J-0rj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JYa-2v-vYQ"/>
+                            <constraint firstItem="gOx-xh-mld" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="626" id="Lak-A4-fwI"/>
+                            <constraint firstItem="UtQ-1j-srq" firstAttribute="centerX" secondItem="gOx-xh-mld" secondAttribute="centerX" id="WSN-My-2bV"/>
+                            <constraint firstItem="wmO-9J-0rj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XxW-vH-DQv"/>
+                            <constraint firstItem="wmO-9J-0rj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bHk-rS-49R"/>
+                            <constraint firstItem="hRc-Oi-LbS" firstAttribute="top" secondItem="U7p-sW-LIP" secondAttribute="bottom" constant="-60" id="f51-v6-gkG"/>
+                            <constraint firstItem="gOx-xh-mld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="go3-GK-gg8"/>
+                            <constraint firstItem="hRc-Oi-LbS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yqm-j2-phw"/>
+                            <constraint firstAttribute="bottom" secondItem="UtQ-1j-srq" secondAttribute="bottom" constant="58" id="zHU-zD-eWZ"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
-                        <outlet property="statusLabel" destination="wvb-Qu-F5J" id="hVU-X8-lzC"/>
+                        <outlet property="dope" destination="hRc-Oi-LbS" id="pDI-kz-YxO"/>
+                        <outlet property="statusLabel" destination="8HR-oK-Smu" id="RFs-eY-LGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,4 +104,7 @@
             <point key="canvasLocation" x="152.80000000000001" y="154.27286356821591"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="76" height="76"/>
+    </resources>
 </document>
