@@ -71,7 +71,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="UtQ-1j-srq">
-                                <rect key="frame" x="137" y="509" width="100" height="100"/>
+                                <rect key="frame" x="138" y="384" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UtQ-1j-srq" secondAttribute="height" multiplier="1:1" id="YDD-Ji-gcZ"/>
                                     <constraint firstAttribute="height" constant="100" id="mSU-B2-cg6"/>
@@ -83,14 +83,16 @@
                             <constraint firstItem="hRc-Oi-LbS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-129" id="E7v-4u-XMm"/>
                             <constraint firstItem="U7p-sW-LIP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HJ3-Va-2cF"/>
                             <constraint firstItem="wmO-9J-0rj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JYa-2v-vYQ"/>
+                            <constraint firstItem="gOx-xh-mld" firstAttribute="top" secondItem="UtQ-1j-srq" secondAttribute="bottom" constant="142" id="Khe-10-xAD"/>
                             <constraint firstItem="gOx-xh-mld" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="626" id="Lak-A4-fwI"/>
                             <constraint firstItem="UtQ-1j-srq" firstAttribute="centerX" secondItem="gOx-xh-mld" secondAttribute="centerX" id="WSN-My-2bV"/>
                             <constraint firstItem="wmO-9J-0rj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XxW-vH-DQv"/>
                             <constraint firstItem="wmO-9J-0rj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="bHk-rS-49R"/>
                             <constraint firstItem="hRc-Oi-LbS" firstAttribute="top" secondItem="U7p-sW-LIP" secondAttribute="bottom" constant="-60" id="f51-v6-gkG"/>
                             <constraint firstItem="gOx-xh-mld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="go3-GK-gg8"/>
+                            <constraint firstItem="gOx-xh-mld" firstAttribute="top" secondItem="UtQ-1j-srq" secondAttribute="bottom" constant="142" id="u3j-d8-YVk"/>
                             <constraint firstItem="hRc-Oi-LbS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yqm-j2-phw"/>
-                            <constraint firstAttribute="bottom" secondItem="UtQ-1j-srq" secondAttribute="bottom" constant="58" id="zHU-zD-eWZ"/>
+                            <constraint firstAttribute="bottom" secondItem="UtQ-1j-srq" secondAttribute="bottom" constant="183" id="zHU-zD-eWZ"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
